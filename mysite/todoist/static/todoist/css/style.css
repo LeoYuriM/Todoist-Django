@@ -85,6 +85,10 @@ a{
     background-color: black;
 }
 
+.block-header >h1{
+    color:white;
+}
+
 .block{
     background-color: #6161611f;
     border: 5px solid;

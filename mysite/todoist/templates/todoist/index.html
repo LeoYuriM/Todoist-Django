@@ -30,12 +30,16 @@
             </a>
         </nav>
         <ul class="block-ul">
-            <li class="block-list-1">
-                <div class="block">
-                    <div class="block-header"></div>
-                    <div class="input-container"><input type="text"></div>
-                </div>
-            </li>
+            {% if bloco_list %}
+                {% for bloco in bloco_list %}
+                    <li class="block-list-1">
+                        <div class="block">
+                            <div class="block-header"><h1>{{ bloco.bloco_titulo}}</h1></div>
+                            <div class="input-container"><p>{{ bloco.bloco_texto }}</p></div>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endif%}
         </ul>
     </main>
     <footer>

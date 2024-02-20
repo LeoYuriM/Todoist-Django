@@ -7,7 +7,7 @@ def index(request):
     bloco_list = Bloco.objects.all()
     template = loader.get_template("todoist/index.html")
     context = {
-        "bloco_list" : bloco_list,
+        "bloco_list": bloco_list,
     }
     return HttpResponse(template.render(context, request))
 
