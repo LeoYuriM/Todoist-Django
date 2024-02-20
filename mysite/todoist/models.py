@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+
 class Bloco(models.Model):
     bloco_titulo = models.CharField(max_length=200)
     bloco_texto = models.CharField(max_length=500)
