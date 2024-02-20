@@ -16,7 +16,7 @@ header nav{
     margin: 5px;
 }
 
-ul{
+.header-ul{
     display: flex;
     justify-content: space-between;
 }
@@ -69,6 +69,37 @@ main nav{
 a{
     text-decoration: none;
     color: black;
+}
+
+.block-ul{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 710px;
+    white-space:nowrap;
+}
+
+.block-header{
+    width: 300px;
+    height: 20px;
+    background-color: black;
+}
+
+.block{
+    background-color: #6161611f;
+    border: 5px solid;
+    margin: 50px;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    margin: 100px;
+}
+
+input{
+    width: 97.5%;
+    height: 95%;
+    background-color: #33333369;
+    outline-style: none;
 }
 
 footer {
