@@ -1,4 +1,4 @@
-// Selecionando a UL onde queremos adicionar o LI
+// Selecionando a UL onde adicionar o LI
 var list = document.getElementById("header-ul");
 
 // Criando um novo elemento LI
