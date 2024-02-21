@@ -22,10 +22,12 @@ header nav{
 }
 
 .logo-img{
+    cursor: auto;
     width: 70px;
     justify-content: center;
     align-items: center;
 }
+
 
 header nav li{
     margin-top: -5px;
@@ -64,6 +66,12 @@ main nav{
     display: flex;
     width: 40px;
     height: 40px;
+}
+
+.add-button:hover{
+    transition: ease;
+    transition-duration: .2s;
+    color: green;
 }
 
 a{
@@ -114,6 +122,7 @@ footer {
 }
 
 .container {
+    padding-top: 10px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
