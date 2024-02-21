@@ -1,14 +1,15 @@
 const buttonAddList = document.getElementById('button');
 
 buttonAddList.onclick = function(){
+        // Impede o comportamento padrão de submissão do formulário no caso recarregar a página
+        event.preventDefault();
 
-        alert("foii");
-        // UL adicionar o LI
-        var list = document.getElementById("block-ul");
+        // Seleciona o elemento q for ser duplicado
+        var elementoOriginal = document.querySelector(".block-list-1");
 
-        // Cria um novo elemento LI
-        var novoItem = document.createElement("li");
-
-        // Adiciona o LI à UL
-        list.appendChild(newItem);
+        // Clona o elemento
+        var cloneElemento = elementoOriginal.cloneNode(true);
+    
+        // Insere o clone após o elemento original
+        elementoOriginal.parentNode.insertBefore(cloneElemento, elementoOriginal.nextSibling);
 };
