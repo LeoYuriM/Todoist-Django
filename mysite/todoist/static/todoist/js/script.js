@@ -1,14 +1,8 @@
-const buttonAddList = document.getElementById('button');
+// Selecionando a UL onde queremos adicionar o LI
+var list = document.getElementById("header-ul");
 
-buttonAddList.onclick = function(){
-        // Impede o comportamento padrão de submissão do formulário no caso recarregar a página
-        event.preventDefault();
-        // Seleciona o elemento a ser duplicado
-        var elementoOriginal = document.querySelector(".block-list-1");
+// Criando um novo elemento LI
+var newItem = document.createElement("li");
 
-        // Clona o elemento
-        var cloneElemento = elementoOriginal.cloneNode(true);
-    
-        // Insere o clone após o elemento original
-        elementoOriginal.parentNode.insertBefore(cloneElemento, elementoOriginal.nextSibling);
-};
+// Adicionando o LI à UL
+list.appendChild(newItem);
