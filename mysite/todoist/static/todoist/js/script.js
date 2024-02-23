@@ -5,7 +5,7 @@ buttonAddList.onclick = function(){
         event.preventDefault();
 
         // Seleciona o elemento q for ser duplicado
-        var elementoOriginal = document.querySelector(".block-list-1");
+        var elementoOriginal = document.querySelector(".formulario");
 
         // Clona o elemento
         var cloneElemento = elementoOriginal.cloneNode(true);

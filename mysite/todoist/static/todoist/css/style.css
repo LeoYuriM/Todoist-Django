@@ -44,7 +44,12 @@ button{
 }
 
 main{
-    background-color: #6E5E7A;
+    background: repeating-linear-gradient(
+    -45deg,
+    #6E5E7A,
+    #3D2350 5px,
+    #271633 10px
+    );
     padding-top: 100px;
     max-width: 98%;
     height: 750px;
@@ -57,7 +62,7 @@ main{
 main nav{
     width: 100%;
     height: 40px;
-    background-color: #584c61d2;
+    background-color: #584c61;
     display: flex;
     justify-content: center;
 }
