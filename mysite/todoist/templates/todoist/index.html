@@ -32,12 +32,17 @@
         <ul class="block-ul">
             {% if bloco_list %}
                 {% for bloco in bloco_list %}
-                    <li class="block-list-1">
-                        <div class="block">
-                            <div class="block-header"><input type="text" value="{{ bloco.bloco_titulo}}"></div>
-                            <div class="input-container"><textarea name="texto" rows="30" cols="39">{{ bloco.bloco_texto}}</textarea></div>
-                        </div>
-                    </li>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <li class="block-list-1">
+                            <div class="block">
+                                <div class="block-header"><input type="text" value="{{ bloco.bloco_titulo}}"></div>
+                                <div class="input-container"><textarea name="texto" rows="27" cols="39">{{ bloco.bloco_texto}}</textarea></div>
+                                <input type="hidden" value="{{bloco.id}}">
+                                <div class="submit-button"><input type="submit" value="Submit"></div>
+                            </div>
+                        </li>
+                    </form>
                 {% endfor %}
             {% endif%}
         </ul>
