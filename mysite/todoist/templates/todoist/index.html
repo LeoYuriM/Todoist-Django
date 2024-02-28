@@ -48,7 +48,12 @@
                                     </div>
                                     <div class="input-container"><textarea name="texto" rows="24" cols="39">{{ bloco.bloco_texto}}</textarea></div>
                                     <input type="hidden" value="{{bloco.id}}">
-                                    <div class="submit-button"><input class="submit-input" type="submit" value="Save"></div>
+                                    <div class="submit-button">
+                                        <input class="submit-input" type="submit" value="Save">
+                                        <div class="date-wrapper">
+                                            <input class="date-input" placeholder="Date" maxlength="10" type="date">
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
                         </form>

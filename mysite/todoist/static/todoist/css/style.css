@@ -133,6 +133,9 @@ a{
     color: white;
 }
 
+
+
+
 .input-wrapper {
     flex-grow: 1;
     margin-right: auto;
@@ -170,10 +173,23 @@ textarea{
     text-align: center;
 }
 
+.date-input{
+    text-align: center;
+}
+
+
+.date-wrapper{
+    flex-shrink: 0;
+}
+
+.submit-input{
+    background-color: rgb(0, 185, 0);
+}
+
 .submit-input:hover{
     transition: ease;
     transition-duration: .5s;
-    background-color: rgb(0, 185, 0);
+    background-color: green;
 }
 
 
