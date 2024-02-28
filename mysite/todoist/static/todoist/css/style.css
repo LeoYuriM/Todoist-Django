@@ -61,13 +61,13 @@ main{
 
 .main-container{
     overflow-y: scroll;
-    scrollbar-width: thin;
 }
 
-.main-container::-webkit-scrollbar{
-    color: rebeccapurple;
-    background-color: #ff0;
+.main-container::-webkit-scrollbar {
+    width: 0; /* Para navegadores baseados em WebKit (como Chrome, Safari) */
+    display: none;
 }
+
 
 main nav{
     width: 100%;
@@ -133,9 +133,6 @@ a{
     color: white;
 }
 
-
-
-
 .input-wrapper {
     flex-grow: 1;
     margin-right: auto;
@@ -156,7 +153,7 @@ a{
     border-right: 10px solid black;
 }
 
-textarea{
+textarea{background-color: rgb(168, 168, 168);
     resize: none;
     height: 295px;
     width: 320px;
@@ -182,13 +179,11 @@ textarea{
     flex-shrink: 0;
 }
 
-.submit-input{
-    background-color: rgb(0, 185, 0);
-}
+
 
 .submit-input:hover{
     transition: ease;
-    transition-duration: .5s;
+    transition-duration: .1s;
     background-color: green;
 }
 
