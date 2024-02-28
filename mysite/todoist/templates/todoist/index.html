@@ -51,7 +51,7 @@
                                     <div class="submit-button">
                                         <input class="submit-input" type="submit" value="Save">
                                         <div class="date-wrapper">
-                                            <input class="date-input" placeholder="Date" maxlength="10" type="date">
+                                            <input class="datetime-local" placeholder="Date" maxlength="10" type="datetime-local" value="{{ bloco.data_pub|date:'Y-m-d' }}T{{bloco.data_pub|time:'H:i'}}">
                                         </div>
                                     </div>
                                 </div>
