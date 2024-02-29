@@ -38,6 +38,7 @@
                             {% csrf_token %}
                             <li class="block-list">
                                 <div class="block">
+                                    <input type="number" class="position-input" value="1" min="1" max="5">
                                     <div class="block-header">
                                         <div class="input-wrapper">
                                             <input class="title-input" placeholder="Title" maxlength="10" type="text" value="{{ bloco.bloco_titulo}}">
