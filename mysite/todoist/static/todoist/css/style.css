@@ -102,6 +102,16 @@ a{
     color: black;
 }
 
+.formulario {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.formulario.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .block{
     margin: 5px;
 }
@@ -153,7 +163,8 @@ a{
     border-right: 10px solid black;
 }
 
-textarea{background-color: rgb(168, 168, 168);
+textarea{
+    background-color: white;
     resize: none;
     height: 295px;
     width: 320px;

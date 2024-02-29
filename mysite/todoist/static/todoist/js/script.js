@@ -12,8 +12,16 @@ buttonAddList.onclick = function(){
         });
 
         originalForm.parentNode.appendChild(clone);
-};
+            // Adiciona classe para iniciar a transição
+            clone.classList.add('hide');
 
+            // pequeno intervalo antes de remover a classe "hide" para iniciar a transição
+            setTimeout(function() {
+                clone.classList.remove('hide');
+            }, 50); // Tempo em milissegundos
+        };
+
+// excluir formulário
 document.addEventListener("DOMContentLoaded", function() {
     // Adiciona o evento de clique ao elemento pai com a classe "block-ul"
     document.querySelector('.block-ul').addEventListener('click', function(event) {
