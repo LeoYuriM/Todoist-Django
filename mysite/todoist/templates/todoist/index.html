@@ -34,14 +34,14 @@
             <ul class="block-ul">
                 {% if bloco_list %}
                     {% for bloco in bloco_list %}
-                        <form class="formulario" action="" method="post">
+                        <form class="formulario" action="{% url 'todoist:update' bloco.id %}" method="post">
                             {% csrf_token %}
                             <li class="block-list">
                                 <div class="block">
                                     <input type="number" class="position-input" value="1" min="1" max="5">
                                     <div class="block-header">
                                         <div class="input-wrapper">
-                                            <input class="title-input" placeholder="Title" maxlength="10" type="text" value="{{ bloco.bloco_titulo}}">
+                                            <input class="title-input"  name="titulo" placeholder="Title" maxlength="10" type="text" value="{{ bloco.bloco_titulo}}">
                                         </div>
                                         <div class="icon-wrapper">
                                             <a href="{% url 'todoist:delete' bloco.id %}" id="exclude-form"><i class="fa-solid fa-circle-xmark"></i></a>
@@ -52,7 +52,7 @@
                                     <div class="submit-button">
                                         <input class="submit-input" type="submit" value="Save">
                                         <div class="date-wrapper">
-                                            <input class="datetime-local" placeholder="Date" maxlength="10" type="datetime-local" value="{{ bloco.data_pub|date:'Y-m-d' }}T{{bloco.data_pub|time:'H:i'}}">
+                                            <input class="datetime-local" name="data" placeholder="Date" maxlength="10" type="datetime-local" value="{{ bloco.data_pub|date:'Y-m-d' }}T{{bloco.data_pub|time:'H:i'}}">
                                         </div>
                                     </div>
                                 </div>

@@ -19,11 +19,15 @@ buttonAddList.onclick = function(){
 
     // Limpa os campos de texto e área de texto do formulário clonado
     var inputs = clone.querySelectorAll('input[type="text"], textarea');
-    var exclude_button = clone.querySelector("#exclude-form");
-    exclude_button.href = "";
     inputs.forEach(function(input) {
         input.value = '';
     });
+    // limpa o link para exclusão
+    var exclude_button = clone.querySelector("#exclude-form");
+    exclude_button.href = "";
+
+    // limpa o link de submissão do formulário
+    clone.action = "/create";
 
     // Define a data e hora atual para o input de data e hora do formulário clonado
     var currentDateTime = new Date().toISOString().slice(0, 16); // Formato: YYYY-MM-DDTHH:mm

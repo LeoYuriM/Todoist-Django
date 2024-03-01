@@ -18,9 +18,22 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def detalhe(request, bloco_id):
-    return HttpResponse("Detalhes do Bloco %s." % bloco_id)
+def create(request):
+    titulo = request.POST.get("titulo", "")
+    texto = request.POST.get("texto", "")
+    data = request.POST.get("data", "")
+    bloco = Bloco(bloco_titulo=titulo, bloco_texto=texto, data_pub=data)
+    bloco.save()
+    return HttpResponseRedirect(reverse("todoist:index"))
 
+
+def update(request, bloco_id):
+    bloco = get_object_or_404(Bloco, pk=bloco_id)
+    bloco.bloco_titulo = request.POST.get("titulo", "")
+    bloco.bloco_texto = request.POST.get("texto", "")
+    bloco.data_pub = request.POST.get("data", "")
+    bloco.save()
+    return HttpResponseRedirect(reverse("todoist:index"))
 
 def delete(request, bloco_id):
     bloco = get_object_or_404(Bloco, pk=bloco_id)
