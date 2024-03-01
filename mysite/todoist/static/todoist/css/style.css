@@ -10,11 +10,71 @@ header nav{
 }
 
 
-.user{
+.user {
+    padding-left: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.user img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin: 5px;
+}
+
+.menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: black;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu li a:hover {
+    background-color: #f0f0f0;
 }
 
 .header-ul{
@@ -216,17 +276,6 @@ footer {
     width: 300px;
 }
 
-.footer-content-j:hover .img-j {
-    display: block;
-}
-
-.img-j{
-    align-items: center;
-    width: 50px;
-    border-radius: 50%;
-    display: none;
-    margin-bottom: 10px;
-}
 
 .footer-content h2 {
     margin-bottom: 10px;

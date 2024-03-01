@@ -15,7 +15,13 @@
         <nav>
             <ul class="header-ul">
                 <li>
-                    <img id="userPhoto" class="user" src="{% static  'todoist/img/user.png' %}" alt="">
+                    <div class="user" id="userMenu">
+                        <img id="userPhoto" src="{% static  'todoist/img/user.png' %}" alt="">
+                        <ul class="menu">
+                            <li><a href="#" id="changeImage">Mudar Imagem</a></li>
+                            <li><a href="#">Sair da Conta</a></li>
+                        </ul>
+                    </div>
                     <input type="file" id="fileInput" style="display: none;">
                 </li>
                 <li class="logo"><a href="#"><img class="logo-img" src="{% static  'todoist/img/icon.png' %}" alt=""></a></li>
@@ -73,7 +79,6 @@
                 <p>Email: joao.vit.maiaoliv@gmail.com</p>
                 <p>Telefone: +55 11-963415901</p>
                 <p>Github: <a target="_blank" href="https://github.com/JoaoVitMaia">JoaoVitMaia</a></p><br>
-                <img class="img-j" src="{% static  'todoist/img/Rosto.jpeg' %}" alt="">
             </div>
             <div class="footer-content footer-content-l">
                 <h2>Leonardo Yuri</h2>

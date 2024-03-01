@@ -75,3 +75,60 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+//sair da conta e mudar imagem
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona os elementos relevantes do DOM
+    const userMenu = document.getElementById('userMenu'); // Div que contém a imagem do usuário e o menu
+    const menu = userMenu.querySelector('.menu'); // Menu suspenso
+    const changeImage = document.getElementById('changeImage'); // Link "Mudar Imagem" no menu
+    const fileInput = document.getElementById('fileInput'); // Input de arquivo
+    const userPhoto = document.getElementById('userPhoto'); // Imagem do usuário
+
+    let timer; // Variável para armazenar o temporizador de ocultação do menu
+
+    // Evento ao passar o mouse sobre a área do usuário para exibir o menu
+    userMenu.addEventListener('mouseenter', function() {
+        clearTimeout(timer); // Limpa o temporizador de ocultação do menu
+        menu.style.display = 'block'; // Exibe o menu suspenso
+    });
+
+    // Evento ao retirar o mouse da área do usuário para ocultar o menu após um pequeno atraso
+    userMenu.addEventListener('mouseleave', function() {
+        // Define um temporizador para ocultar o menu após 200 milissegundos
+        timer = setTimeout(function() {
+            menu.style.display = 'none'; // Oculta o menu suspenso
+        }, 200);
+    });
+
+    // Evento ao passar o mouse sobre o menu para evitar que seja ocultado
+    menu.addEventListener('mouseenter', function() {
+        clearTimeout(timer); // Limpa o temporizador de ocultação do menu
+    });
+
+    // Evento ao retirar o mouse do menu para ocultá-lo novamente
+    menu.addEventListener('mouseleave', function() {
+        menu.style.display = 'none'; // Oculta o menu suspenso
+    });
+
+    // Evento de clique no link "Mudar Imagem" para abrir o seletor de arquivo ao clicar
+    changeImage.addEventListener('click', function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do link
+        fileInput.click(); // Aciona o clique no input de arquivo oculto
+    });
+
+    // Evento ao selecionar um novo arquivo no input de arquivo para atualizar a imagem do usuário
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0]; // Obtém o arquivo selecionado no input
+        const reader = new FileReader(); // Cria um objeto FileReader para ler o arquivo
+
+        // Manipulador de evento para quando a leitura do arquivo for concluída
+        reader.onload = function(event) {
+            userPhoto.src = event.target.result; // Atualiza a imagem do usuário com o conteúdo do arquivo
+        };
+
+        if (file) {
+            reader.readAsDataURL(file); // Inicia a leitura do arquivo como uma URL de dados
+        }
+    });
+});
