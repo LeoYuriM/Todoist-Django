@@ -46,6 +46,9 @@ def delete(request, bloco_id):
 def login(request):
     return render(request, "todoist/login.html")
 
+def create_account(request):
+    return render(request, "todoist/create-account.html")
+
 
 def __retorna_blocos():
     return Bloco.objects.all()
