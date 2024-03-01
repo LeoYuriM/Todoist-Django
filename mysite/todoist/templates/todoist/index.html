@@ -24,8 +24,12 @@
                     </div>
                     <input type="file" id="fileInput" style="display: none;">
                 </li>
-                <li class="logo"><a href="#"><img class="logo-img" src="{% static  'todoist/img/icon.png' %}" alt=""></a></li>
-                <li class="Login"><button><a href="{% url 'todoist:login' %}">Login</a></button></li>
+                <li class="logo">
+                    <a href="#"><img class="logo-img" src="{% static  'todoist/img/icon.png' %}" alt=""></a>
+                </li>
+                <li class="Login">
+                    <button id="loginButton"><a href="{% url 'todoist:login' %}">Login</a></button>    
+                </li>
             </ul>
         </nav>
     </header>
