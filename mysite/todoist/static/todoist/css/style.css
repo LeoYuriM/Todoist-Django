@@ -120,7 +120,6 @@ a{
     display: flex;
     flex-wrap: wrap;
     height: 550px;
-    margin: auto;
 }
 
 .block-header{
