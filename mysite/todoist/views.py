@@ -3,6 +3,7 @@ from django.template import loader
 from .models import Bloco
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
+from django.shortcuts import render
 
 
 def index(request):
@@ -40,6 +41,10 @@ def delete(request, bloco_id):
     if len(__retorna_blocos()) > 1:
         bloco.delete()
     return HttpResponseRedirect(reverse("todoist:index"))
+
+
+def login(request):
+    return render(request, "todoist/login.html")
 
 
 def __retorna_blocos():

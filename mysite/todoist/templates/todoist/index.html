@@ -16,7 +16,7 @@
             <ul class="header-ul">
                 <li><img class="user" src="{% static  'todoist/img/user.png' %}" alt=""></li>
                 <li class="logo"><a href="#"><img class="logo-img" src="{% static  'todoist/img/icon.png' %}" alt=""></a></li>
-                <li class="Login"><button><a href="login.html">Login</a></button></li>
+                <li class="Login"><button><a href="{% url 'todoist:login' %}">Login</a></button></li>
             </ul>
         </nav>
     </header>
