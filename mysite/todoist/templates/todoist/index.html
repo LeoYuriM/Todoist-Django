@@ -16,7 +16,7 @@
             <ul class="header-ul">
                 <li><img class="user" src="{% static  'todoist/img/user.png' %}" alt=""></li>
                 <li class="logo"><a href="#"><img class="logo-img" src="{% static  'todoist/img/icon.png' %}" alt=""></a></li>
-                <li class="Login"><button>Login</button></li>
+                <li class="Login"><button><a href="login.html">Login</a></button></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +38,6 @@
                             {% csrf_token %}
                             <li class="block-list">
                                 <div class="block">
-                                    <input type="number" class="position-input" value="1" min="1" max="5">
                                     <div class="block-header">
                                         <div class="input-wrapper">
                                             <input class="title-input"  name="titulo" placeholder="Title" maxlength="10" type="text" value="{{ bloco.bloco_titulo}}">
