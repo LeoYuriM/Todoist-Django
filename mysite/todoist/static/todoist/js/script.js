@@ -19,6 +19,8 @@ buttonAddList.onclick = function(){
 
     // Limpa os campos de texto e área de texto do formulário clonado
     var inputs = clone.querySelectorAll('input[type="text"], textarea');
+    var exclude_button = clone.querySelector("#exclude-form");
+    exclude_button.href = "";
     inputs.forEach(function(input) {
         input.value = '';
     });
