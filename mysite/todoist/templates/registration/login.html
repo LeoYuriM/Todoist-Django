@@ -73,11 +73,22 @@
 </head>
 <body>
     <div class="container">
+        {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-{{msg.level_tag}}" role="alert">
+        {{msg.message}}
+            </div>
+        {% endfor %}
+        {% endif %}
+        {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
         <h1>Login</h1>
-        <form class="login-form">
-            <input type="text" placeholder="Usuário" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+        <form class="login-form" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" value="Login">Entrar</button>
+            <input type="hidden" name="next" value="{{ next }}" />
         </form>
         <p>Não tem uma conta? <a href="{% url 'todoist:create-account' %}">Crie uma aqui</a>.</p>
 

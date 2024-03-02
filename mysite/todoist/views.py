@@ -3,7 +3,22 @@ from django.template import loader
 from .models import Bloco
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+
+
+def create_account(request):
+    if request.method != 'POST':
+        form = UserCreationForm()
+    else:
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("accounts/login/")
+
+    context = {'form': form}
+
+    return render(request, 'todoist/create-account.html', context)
 
 
 def index(request):
@@ -46,8 +61,9 @@ def delete(request, bloco_id):
 def login(request):
     return render(request, "todoist/login.html")
 
-def create_account(request):
-    return render(request, "todoist/create-account.html")
+
+# def create_account(request):
+#    return render(request, "todoist/create-account.html")
 
 
 def __retorna_blocos():
