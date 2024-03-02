@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
+from django.db.models import Q
 
 
 def create_account(request):
@@ -24,7 +25,7 @@ def create_account(request):
 
 def index(request):
     # pega todos os blocos
-    bloco_list = __retorna_blocos()
+    bloco_list = __retorna_blocos(request)
     # carrega o template index
     template = loader.get_template("todoist/index.html")
     # adiciona a lista dos blocos em uma lista de contexto
@@ -40,6 +41,8 @@ def create(request):
     texto = request.POST.get("texto", "")
     data = request.POST.get("data", "")
     bloco = Bloco(bloco_titulo=titulo, bloco_texto=texto, data_pub=data)
+    if request.user.is_authenticated:
+        bloco.user = request.user
     bloco.save()
     return HttpResponseRedirect(reverse("todoist:index"))
 
@@ -52,9 +55,10 @@ def update(request, bloco_id):
     bloco.save()
     return HttpResponseRedirect(reverse("todoist:index"))
 
+
 def delete(request, bloco_id):
     bloco = get_object_or_404(Bloco, pk=bloco_id)
-    if len(__retorna_blocos()) > 1:
+    if len(__retorna_blocos(request)) > 1:
         bloco.delete()
     return HttpResponseRedirect(reverse("todoist:index"))
 
@@ -72,5 +76,9 @@ def encerrar_sessao(request):
 #    return render(request, "todoist/create-account.html")
 
 
-def __retorna_blocos():
-    return Bloco.objects.all()
+def __retorna_blocos(request):
+    if request.user.is_authenticated:
+        result = Bloco.objects.filter(Q(user=request.user) | Q(user__isnull=True))
+    else:
+        result = Bloco.objects.filter(user__isnull=True)
+    return result
