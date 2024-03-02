@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout
 
 
 def create_account(request):
@@ -60,6 +61,11 @@ def delete(request, bloco_id):
 
 def login(request):
     return render(request, "todoist/login.html")
+
+
+def encerrar_sessao(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("todoist:index"))
 
 
 # def create_account(request):

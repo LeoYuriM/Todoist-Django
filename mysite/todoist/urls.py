@@ -9,5 +9,6 @@ urlpatterns = [
     path("<int:bloco_id>/update/", views.update, name="update"),
     path("create", views.create, name="create"),
     path("login", views.login, name="login"),
-    path("create-account", views.create_account, name="create-account")
+    path("create-account", views.create_account, name="create-account"),
+    path("logout", views.encerrar_sessao, name="encerrar_sessao")
 ]

@@ -27,9 +27,15 @@
                 <li class="logo">
                     <a href="#"><img class="logo-img" src="{% static  'todoist/img/icon.png' %}" alt=""></a>
                 </li>
+                {% if not request.user.is_authenticated %}
                 <li class="Login">
                     <button id="loginButton"><a href="accounts/login/">Login</a></button>
                 </li>
+                {% else %}
+                <li class="Login">
+                    <button id="logoutButton"><a href="{% url 'todoist:encerrar_sessao' %}">Logout</a></button>
+                </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
