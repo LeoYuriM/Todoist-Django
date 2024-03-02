@@ -87,10 +87,10 @@
         <form class="login-form" method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" value="Login">Entrar</button>
+            <button type="submit" value="Login">Enter</button>
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
-        <p>Não tem uma conta? <a href="{% url 'todoist:create-account' %}">Crie uma aqui</a>.</p>
+        <p>Don't have account? <a rel="next" href="{% url 'todoist:create-account' %}">Sign Up</a>.</p>
 
     </div>
 </body>

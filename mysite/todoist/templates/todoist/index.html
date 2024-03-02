@@ -29,7 +29,7 @@
                 </li>
                 {% if not request.user.is_authenticated %}
                 <li class="Login">
-                    <button id="loginButton"><a href="accounts/login/">Login</a></button>
+                    <button id="loginButton"><a rel="next" href="accounts/login/">Login</a></button>
                 </li>
                 {% else %}
                 <li class="Login">
